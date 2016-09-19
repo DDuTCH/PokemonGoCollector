@@ -38,6 +38,7 @@ public class Scanner
 	{
 		System.setProperty( "sun.net.http.allowRestrictedHeaders", "true" );
 		Logger logger = Logger.getLogger( getClass().getName() );
+		@SuppressWarnings( "unused" )
 		Feature feature = new LoggingFeature( logger, Level.INFO, Verbosity.PAYLOAD_TEXT, null );
 		client = ClientBuilder.newBuilder()
 				//.register( feature )

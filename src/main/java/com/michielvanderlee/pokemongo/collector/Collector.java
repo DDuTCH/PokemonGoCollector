@@ -175,7 +175,7 @@ public class Collector
 				long endTime = System.currentTimeMillis();
 				long scanTime= endTime - startTime;
 				metrics.histogram( SCAN_METRICS ).update( scanTime );
-				logger.debug( "Scan took: {} seconds", scanTime/1000 );
+				logger.debug( "Scan took: {} seconds, and found {} pokemon", scanTime/1000, scanResults.getPokemon().size() );
 				
 				Persistor persistor = Persistor.getInstance();
 				persistor.persistPokemon( scanResults.getPokemon() );
